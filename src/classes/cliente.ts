@@ -1,0 +1,16 @@
+import { ContaBancaria } from "./contaBancaria";
+import { Endereco } from "./endereco";
+import { Gerente } from "./gerente";
+import { Usuario } from "./usuario";
+
+export class Cliente extends Usuario{
+    contaBancaria!: ContaBancaria[]
+    gerenteDeConta!: Gerente
+
+    constructor(nome: string, endereco: Endereco, telefone: string){
+        super()
+        this.nome = nome
+        this.endereco = endereco
+        this.telefone = telefone
+    }
+}
