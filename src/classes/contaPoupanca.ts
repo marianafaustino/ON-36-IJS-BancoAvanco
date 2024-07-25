@@ -1,5 +1,5 @@
-import { TipoTransacao } from "../enums/tipoTransacao";
-import { ContaBancaria } from "./contaBancaria";
+/* import { TipoTransacao } from "../enums/tipoTransacao";
+import { ContaBancaria } from "../contas/contaBancaria.model";
 import { Transacao } from "./transacao";
 import { Cliente } from "./cliente";
 
@@ -28,3 +28,4 @@ export class ContaPoupanca extends ContaBancaria{
         return this.saldo * 0.0001; // 0,01% do saldo
       }
 }
+      */
