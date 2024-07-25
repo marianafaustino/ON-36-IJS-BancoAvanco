@@ -34,7 +34,12 @@ export class GerenteService {
         
         const novaConta = {
             tipo,
-            saldo: 0
+            saldo: 0,
+            gerente: {
+                nome: "Mariana",
+                id: "1"
+
+            }
         }
 
         return this.atualizarContaCliente(idCliente, novaConta)
@@ -56,6 +61,35 @@ export class GerenteService {
         this.guardarClientes(clientes)
         return clientes[indiceCliente]
     }
+
+    excluirContaBancaria(idCliente: number, tipoConta: TipoConta): Cliente {
+        const clientes = this.lerClientes();
+        const indiceCliente = clientes.findIndex(cliente => cliente.id === Number(idCliente));
+    
+        const cliente = clientes[indiceCliente];
+        if (cliente.contas) {
+            cliente.contas = cliente.contas.filter(conta => conta.tipo !== tipoConta);
+        }
+    
+        this.guardarClientes(clientes);
+    
+        return cliente;
+    }
+
+    alterarTipoConta(idCliente: number, tipoContaAtual: TipoConta, novoTipoConta: TipoConta): Cliente {
+        const clientes = this.lerClientes();
+
+        const indiceCliente = clientes.findIndex(cliente => cliente.id === Number(idCliente));
+
+        const cliente = clientes[indiceCliente];
+        const conta = cliente.contas?.find(conta => conta.tipo === tipoContaAtual);
+        console.log(conta)
+
+        conta.tipo = novoTipoConta;
+        this.guardarClientes(clientes);
+        return cliente;
+    }
+    
 
     criarCliente(nome: string): Cliente{
         const clientes = this.lerClientes()

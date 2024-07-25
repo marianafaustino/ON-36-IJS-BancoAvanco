@@ -23,5 +23,13 @@ export class GerenteController {
             return this.gerenteService.criarContaBancaria(tipo, idCliente)
         }  
     
+    @Put()
+        excluirContaBancaria(@Body('tipo') TipoConta: TipoConta, @Body('idCliente') idCliente: number): Cliente{
+            return this.gerenteService.excluirContaBancaria(idCliente, TipoConta)
+        }
     
+    @Put('alterar-tipo-conta')
+        alterarTipoConta(@Body('tipoContaAtual') tipoContaAtual: TipoConta, @Body('novoTipoConta') novoTipoConta: TipoConta, @Body('idCliente') idCliente: number): Cliente{
+            return this.gerenteService.alterarTipoConta(idCliente, tipoContaAtual, novoTipoConta)
+        }
 }
