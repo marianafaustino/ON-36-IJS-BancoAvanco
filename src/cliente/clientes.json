@@ -1,11 +1,7 @@
 [
   {
     "nome": "Maria",
-    "id": 0
-  },
-  {
-    "nome": "Mariana",
-    "id": 1,
+    "id": 0,
     "contas": [
       {
         "tipo": "Conta Corrente",
@@ -18,7 +14,41 @@
     ]
   },
   {
+    "nome": "Mariana",
+    "id": 1,
+    "contas": [
+      {
+        "tipo": "Conta Poupança",
+        "saldo": 0
+      }
+    ]
+  },
+  {
     "nome": "Douglas",
-    "id": 2
+    "id": 2,
+    "contas": [
+      {
+        "tipo": "Conta Poupança",
+        "saldo": 0
+      },
+      {
+        "tipo": "Conta Corrente",
+        "saldo": 0
+      }
+    ]
+  },
+  {
+    "nome": "Marly",
+    "id": 3,
+    "contas": [
+      {
+        "tipo": "Conta Poupança",
+        "saldo": 0,
+        "gerente": {
+          "nome": "Mariana",
+          "id": "1"
+        }
+      }
+    ]
   }
 ]
