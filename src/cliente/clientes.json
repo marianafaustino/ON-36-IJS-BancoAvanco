@@ -48,6 +48,18 @@
           "nome": "Mariana",
           "id": "1"
         }
+      },
+      {
+        "tipo": "Conta Corrente",
+        "saldo": 0,
+        "gerente": {
+          "nome": "Mariana",
+          "id": "1"
+        },
+        "proprietario": {
+          "nome": "Marly",
+          "id": 3
+        }
       }
     ]
   }
