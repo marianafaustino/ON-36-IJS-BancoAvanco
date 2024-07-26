@@ -31,7 +31,8 @@ export class GerenteService {
     }
 
     criarContaBancaria(tipo: TipoConta, idCliente: number): Cliente{
-        
+        const clientes = this.lerClientes();
+        const cliente = clientes.find(cliente => cliente.id === idCliente);
         const novaConta = {
             tipo,
             saldo: 0,
@@ -39,11 +40,14 @@ export class GerenteService {
                 nome: "Mariana",
                 id: "1"
 
+            },
+            proprietario: {
+                nome: cliente.nome,
+                id: cliente.id
             }
         }
-
-        return this.atualizarContaCliente(idCliente, novaConta)
         
+        return this.atualizarContaCliente(idCliente, novaConta)
 
     }
 
@@ -72,6 +76,10 @@ export class GerenteService {
         }
     
         this.guardarClientes(clientes);
+
+        let contas = this.lerContas();
+        contas = contas.filter(conta => !(conta.tipo === tipoConta && conta.proprietario.id === idCliente));
+        this.guardarContas(contas);
     
         return cliente;
     }
