@@ -5,20 +5,6 @@
     "gerente": {
       "nome": "Mariana",
       "id": "1"
-    },
-    "proprietario": {
-      "nome": "Marly",
-      "id": 3,
-      "contas": [
-        {
-          "tipo": "Conta Poupança",
-          "saldo": 0,
-          "gerente": {
-            "nome": "Mariana",
-            "id": "1"
-          }
-        }
-      ]
     }
   },
   {
@@ -27,74 +13,6 @@
     "gerente": {
       "nome": "Mariana",
       "id": "1"
-    },
-    "proprietario": {
-      "nome": "Marly",
-      "id": 3,
-      "contas": [
-        {
-          "tipo": "Conta Poupança",
-          "saldo": 0,
-          "gerente": {
-            "nome": "Mariana",
-            "id": "1"
-          }
-        }
-      ]
-    }
-  },
-  {
-    "tipo": "Conta Corrente",
-    "saldo": 0,
-    "gerente": {
-      "nome": "Mariana",
-      "id": "1"
-    }
-  },
-  {
-    "tipo": "Conta Corrente",
-    "saldo": 0,
-    "gerente": {
-      "nome": "Mariana",
-      "id": "1"
-    }
-  },
-  {
-    "tipo": "Conta Corrente",
-    "saldo": 0,
-    "gerente": {
-      "nome": "Mariana",
-      "id": "1"
-    },
-    "proprietario": {
-      "nome": "Marly",
-      "id": 3,
-      "contas": [
-        {
-          "tipo": "Conta Poupança",
-          "saldo": 0,
-          "gerente": {
-            "nome": "Mariana",
-            "id": "1"
-          }
-        },
-        {
-          "tipo": "Conta Corrente",
-          "saldo": 0,
-          "gerente": {
-            "nome": "Mariana",
-            "id": "1"
-          }
-        },
-        {
-          "tipo": "Conta Corrente",
-          "saldo": 0,
-          "gerente": {
-            "nome": "Mariana",
-            "id": "1"
-          }
-        }
-      ]
     }
   }
 ]

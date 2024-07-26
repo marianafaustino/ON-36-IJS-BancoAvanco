@@ -1,4 +1,4 @@
-import { Controller, Post, Body, Get, Param, Patch, Put } from '@nestjs/common';
+import { Controller, Post, Body, Get, Param, Patch, Put, Delete } from '@nestjs/common';
 import { GerenteService } from './gerente.service';
 import { Cliente } from 'src/cliente/cliente.model';
 import { TipoConta } from 'src/enums/tipoConta';
@@ -31,5 +31,10 @@ export class GerenteController {
     @Put('alterar-tipo-conta')
         alterarTipoConta(@Body('tipoContaAtual') tipoContaAtual: TipoConta, @Body('novoTipoConta') novoTipoConta: TipoConta, @Body('idCliente') idCliente: number): Cliente{
             return this.gerenteService.alterarTipoConta(idCliente, tipoContaAtual, novoTipoConta)
+        }
+    
+    @Delete()
+        excluirCliente(@Body('idCliente') idCliente: number):void{
+            return this.gerenteService.excluirCliente(idCliente)
         }
 }

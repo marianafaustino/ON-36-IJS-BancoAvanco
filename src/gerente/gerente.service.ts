@@ -121,5 +121,17 @@ export class GerenteService {
         return cliente
     }
 
+    excluirCliente(idCliente: number): void {
+        const clientes = this.lerClientes();
+        const contas = this.lerContas();
+    
+        const clientesAtualizados = clientes.filter(cliente => cliente.id !== idCliente);
+    
+        const contasAtualizadas = contas.filter(conta => conta.proprietario?.id !== idCliente);
+    
+        this.guardarClientes(clientesAtualizados);
+        this.guardarContas(contasAtualizadas);
+      }
+
 
 }
