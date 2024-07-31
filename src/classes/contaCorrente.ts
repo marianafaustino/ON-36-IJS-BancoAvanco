@@ -1,4 +1,4 @@
-import { ContaBancaria } from "./contaBancaria";
+/* import { ContaBancaria } from "../contas/contaBancaria.model";
 import { Transacao } from "./transacao";
 import { TipoTransacao } from "../enums/tipoTransacao";
 import { Cliente } from "./cliente";
@@ -24,3 +24,5 @@ export class ContaCorrente extends ContaBancaria{
         }
     }
 }
+
+*/
