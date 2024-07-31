@@ -4,6 +4,7 @@ import * as path from 'path';
 import * as fs from 'fs'
 import { ContaBancaria } from 'src/contas/contaBancaria.model';
 import { TipoConta } from 'src/enums/tipoConta';
+import { ContaBancariaFactory } from 'src/contas/contaBancaria.factory';
 
 @Injectable()
 export class GerenteService {
@@ -11,6 +12,10 @@ export class GerenteService {
 
     private readonly arquivoClientes = path.resolve('src/cliente/clientes.json');
     private readonly arquivoContas = path.resolve('src/contas/contas.json');
+    
+    constructor(
+        private readonly contaBancariaFactory: ContaBancariaFactory
+    ){}
 
     private lerContas(): ContaBancaria[]{
         const dados = fs.readFileSync(this.arquivoContas, 'utf-8')
@@ -30,23 +35,8 @@ export class GerenteService {
         fs.writeFileSync(this.arquivoClientes, JSON.stringify(cliente, null, 2), 'utf-8')
     }
 
-    criarContaBancaria(tipo: TipoConta, idCliente: number): Cliente{
-        const clientes = this.lerClientes();
-        const cliente = clientes.find(cliente => cliente.id === idCliente);
-        const novaConta = {
-            tipo,
-            saldo: 0,
-            gerente: {
-                nome: "Mariana",
-                id: "1"
-
-            },
-            proprietario: {
-                nome: cliente.nome,
-                id: cliente.id
-            }
-        }
-        
+    criarContaBancaria(tipo: TipoConta, idCliente: number, idGerente: number): Cliente{
+        const novaConta = this.contaBancariaFactory.construirConta(tipo, idGerente, idCliente)
         return this.atualizarContaCliente(idCliente, novaConta)
 
     }
