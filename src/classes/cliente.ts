@@ -1,4 +1,4 @@
-import { ContaBancaria } from "../contas/contaBancaria.model";
+import { ContaBancaria } from "../contaBancaria/contaBancaria.model";
 import { Endereco } from "./endereco";
 
 import { Usuario } from "./usuario";
