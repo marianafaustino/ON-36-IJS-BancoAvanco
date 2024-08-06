@@ -2,7 +2,7 @@ import { ContaBancaria } from "./contaBancaria.model";
 import { TipoConta } from "src/enums/tipoConta";
 
 export class ContaCorrente extends ContaBancaria{
-    private limiteChequeEspecial!: number
+    limiteChequeEspecial: number
 
     constructor(t: TipoConta, s: number, idG: number, idC: number){
         super(t, s, idC, idG)
@@ -10,6 +10,7 @@ export class ContaCorrente extends ContaBancaria{
         this.idCliente = idC
         this.idGerente = idG
         this.saldo = s
+        this.limiteChequeEspecial = 100
         
     }
 }
