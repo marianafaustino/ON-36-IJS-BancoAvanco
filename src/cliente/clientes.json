@@ -20,7 +20,9 @@
       {
         "tipo": "Conta Poupança",
         "saldo": 0
-      }
+      },
+      {},
+      {}
     ]
   },
   {
