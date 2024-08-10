@@ -1,18 +1,13 @@
-import { Test, TestingModule } from '@nestjs/testing';
+import { Cliente } from './cliente.model';
 import { ClienteService } from './cliente.service';
 
-describe('ClienteService', () => {
-  let service: ClienteService;
 
-  beforeEach(async () => {
-    const module: TestingModule = await Test.createTestingModule({
-      providers: [ClienteService],
-    }).compile();
+describe('Service de cliente', ()=>{
+  test('Deve criar um cliente', ()=>{
+    const clienteService = new ClienteService()
 
-    service = module.get<ClienteService>(ClienteService);
-  });
+    const retornado = clienteService.criarCliente('Mariana Faustino')
 
-  it('should be defined', () => {
-    expect(service).toBeDefined();
-  });
-});
+    expect(retornado).toStrictEqual(new Cliente('Mariana Faustino', 9))
+  })
+})
