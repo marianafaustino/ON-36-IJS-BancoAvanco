@@ -2,15 +2,15 @@ import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { GerenteModule } from './gerente/gerente.module';
-import { ContasService } from './contaBancaria/contaBancaria.service';
-import { ClienteService } from './cliente/cliente.service';
-import { ClienteController } from './cliente/cliente.controller';
-import { ContaBancariaController } from './contaBancaria/contaBancaria.controller';
+import { ContasService } from './aplicacao/servicos/contaBancaria.service';
+import { ClienteService } from './aplicacao/servicos/cliente.service';
+import { ClienteController } from '../src/aplicacao/controladores/cliente.controller';
+import { ContaBancariaController } from './aplicacao/controladores/contaBancaria.controller';
 import { CepService } from './cep/cep.service';
 import { CepController } from './cep/cep.controller';
 import { CepModule } from './cep/cep.module';
 import { ContaBancariaModule } from './contaBancaria/contaBancaria.module';
-import { ContaBancariaFactory } from './contaBancaria/contaBancaria.factory';
+import { ContaBancariaFactory } from './dominio/fabrica/contaBancaria.factory';
 import { HttpModule } from '@nestjs/axios';
 
 @Module({
