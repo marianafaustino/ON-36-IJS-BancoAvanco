@@ -1,11 +1,11 @@
 import { Injectable } from '@nestjs/common';
-import { Cliente } from 'src/cliente/cliente.model';
+import { Cliente } from '../cliente/cliente.model';
 import * as path from 'path';
 import * as fs from 'fs'
-import { ContaBancaria } from 'src/contaBancaria/contaBancaria.model';
-import { TipoConta } from 'src/enums/tipoConta';
-import { ContaBancariaFactory } from 'src/contaBancaria/contaBancaria.factory';
-import { ClienteService } from 'src/cliente/cliente.service';
+import { ContaBancaria } from '../contaBancaria/contaBancaria.model';
+import { TipoConta } from '../enums/tipoConta';
+import { ContaBancariaFactory } from '../contaBancaria/contaBancaria.factory';
+import { ClienteService } from '../cliente/cliente.service';
 
 @Injectable()
 export class ContasService {
