@@ -11,9 +11,13 @@ import { CepController } from './cep/cep.controller';
 import { CepModule } from './cep/cep.module';
 import { ContaBancariaModule } from './contaBancaria/contaBancaria.module';
 import { ContaBancariaFactory } from './contaBancaria/contaBancaria.factory';
+import { HttpModule } from '@nestjs/axios';
 
 @Module({
-  imports: [GerenteModule, CepModule, ContaBancariaModule],
+  imports: [GerenteModule, CepModule, ContaBancariaModule,  HttpModule.register({
+    timeout: 5000,
+    maxRedirects: 5,
+})],
   controllers: [AppController, ClienteController, ContaBancariaController, CepController],
   providers: [AppService, ContasService, ClienteService, CepService, ContaBancariaFactory],
 })

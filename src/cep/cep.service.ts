@@ -6,9 +6,9 @@ import { AxiosResponse } from 'axios';
 export class CepService {
     constructor(private readonly httpService: HttpService){}
 
-    async findAll(): Promise<AxiosResponse<any>> {
+    async findAll(cep: string): Promise<AxiosResponse<any>> {
         return this.httpService.axiosRef
-        .get('http://viacep.com.br/ws/01001000/json/')
+        .get(`http://viacep.com.br/ws/${cep}/json/`)
         .then((res)=> res.data)
     }
 }
