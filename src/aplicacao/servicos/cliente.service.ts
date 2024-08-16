@@ -1,14 +1,12 @@
 import { Injectable } from '@nestjs/common';
 import { Cliente } from '../../dominio/cliente/cliente.model';
 import { IClientePort } from '../portas/cliente.port';
-import { ContasService } from './contaBancaria.service';
 import { IContaPort } from '../portas/conta.port';
 
 @Injectable()
 export class ClienteService {
     constructor(
         private readonly clientePort: IClientePort,
-        private readonly contasService: ContasService,
         private readonly contaPort: IContaPort
     ) {}
 
