@@ -3,8 +3,8 @@ import { Cliente } from '../../dominio/cliente/cliente.model';
 import { ContaBancaria } from '../../dominio/conta/contaBancaria.model';
 import { TipoConta } from '../../dominio/enums/tipoConta';
 import { ContaBancariaFactory } from '../../dominio/fabrica/contaBancaria.factory';
-import { IClientePort } from '../../portas/cliente.port';
-import { IContaPort } from '../../portas/conta.port';
+import { IClientePort } from '../portas/cliente.port';
+import { IContaPort } from '../portas/conta.port';
 
 @Injectable()
 export class ContasService {

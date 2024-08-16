@@ -1,4 +1,4 @@
-import { ContaBancaria } from "../dominio/conta/contaBancaria.model";
+import { ContaBancaria } from "../../dominio/conta/contaBancaria.model";
 
 export interface IContaPort {
     lerContas(): ContaBancaria[];
