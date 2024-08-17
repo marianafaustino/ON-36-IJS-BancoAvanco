@@ -2,7 +2,7 @@ import { ContaBancaria } from "./contaBancaria.model";
 import { TipoConta } from "src/enums/tipoConta";
 
 export class ContaPoupanca extends ContaBancaria{
-    private rendimentoPoupanca!: number
+    rendimentoPoupanca: number
 
     constructor(t: TipoConta, s: number, idG: number, idC: number){
       super(t, s, idC, idG)
@@ -10,6 +10,7 @@ export class ContaPoupanca extends ContaBancaria{
       this.idCliente = idC
       this.idGerente = idG
       this.saldo = s
+      this.rendimentoPoupanca = 0.0001
       
   }
     

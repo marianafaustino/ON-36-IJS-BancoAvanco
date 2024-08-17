@@ -1,16 +1,13 @@
 import { Injectable } from '@nestjs/common';
-import { Cliente } from 'src/cliente/cliente.model';
+import { Cliente } from '../cliente/cliente.model';
 import * as path from 'path';
 import * as fs from 'fs'
-import { ContasService } from 'src/contaBancaria/contaBancaria.service';
+import { ContasService } from '../contaBancaria/contaBancaria.service';
 
 @Injectable()
 export class ClienteService {
     private readonly arquivoClientes = path.resolve('src/cliente/clientes.json');
-
-    constructor(
-        private readonly contasService: ContasService
-    ){}
+    private readonly contasService: ContasService
 
     lerClientes(): Cliente[]{
         const dados = fs.readFileSync(this.arquivoClientes, 'utf-8')
@@ -21,15 +18,12 @@ export class ClienteService {
         fs.writeFileSync(this.arquivoClientes, JSON.stringify(cliente, null, 2), 'utf-8')
     }
 
-    criarCliente(nome: string): Cliente{
-        const clientes = this.lerClientes()
-        const novoCliente = {
-            nome,
-            id: clientes.length > 0 ? clientes[clientes.length - 1].id + 1 : 1
-        }
-        clientes.push(novoCliente)
-        this.guardarClientes(clientes)
-        return novoCliente
+    criarCliente(nome: string): Cliente {
+        const clientes = this.lerClientes();
+        const novoCliente = new Cliente(nome, clientes.length > 0 ? clientes[clientes.length - 1].id + 1 : 1);
+        clientes.push(novoCliente);
+        this.guardarClientes(clientes);
+        return novoCliente;
     }
 
     buscarClientePeloId(id: number): Cliente{
