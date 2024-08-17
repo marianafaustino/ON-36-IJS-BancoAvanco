@@ -1,5 +1,5 @@
-import { ContaBancaria } from "./contaBancaria.model";
-import { TipoConta } from "src/enums/tipoConta";
+import { ContaBancaria } from "../conta/contaBancaria.model";
+import { TipoConta } from "src/dominio/enums/tipoConta";
 
 export class ContaCorrente extends ContaBancaria{
     limiteChequeEspecial: number

@@ -1,4 +1,4 @@
-import { ContaBancaria } from "src/contaBancaria/contaBancaria.model"
+import { ContaBancaria } from "../conta/contaBancaria.model"
 
 
 export class Cliente {

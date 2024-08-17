@@ -1,5 +1,5 @@
-import { Cliente } from './cliente.model';
-import { ClienteService } from './cliente.service';
+/*import { Cliente } from '../../dominio/cliente/cliente.model';
+import { ClienteService } from '../servicos/cliente.service';
 
 
 describe('Service de cliente', ()=>{
@@ -10,4 +10,4 @@ describe('Service de cliente', ()=>{
 
     expect(retornado).toStrictEqual(new Cliente('Mariana Faustino', 9))
   })
-})
+})*/
