@@ -1,7 +1,7 @@
 import { Controller, Put, Body } from '@nestjs/common';
-import { ContasService } from './contaBancaria.service';
-import { TipoConta } from 'src/enums/tipoConta';
-import { Cliente } from 'src/cliente/cliente.model';
+import { ContasService } from '../servicos/contaBancaria.service';
+import { TipoConta } from 'src/dominio/enums/tipoConta';
+import { Cliente } from '../../dominio/cliente/cliente.model';
 
 @Controller('conta')
 export class ContaBancariaController {
